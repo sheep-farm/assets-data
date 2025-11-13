@@ -1,0 +1,100 @@
+================================================================================
+CAPM (OLS with HAC Standard Errors)
+================================================================================
+
+CAPM [XLE] (Market Excess Return; HAC=auto)  |  R² = 0.3965
+------------------------------------------------------------------------------
+Parameter                    Coefficient t-statistic
+const                          -0.000370       -0.06
+MKT_excess                      1.041863        7.12
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:             excess_XLE   R-squared:                       0.397
+Model:                            OLS   Adj. R-squared:                  0.390
+Method:                 Least Squares   F-statistic:                     50.66
+Date:                Fri, 31 Oct 2025   Prob (F-statistic):           1.84e-10
+Time:                        19:51:23   Log-Likelihood:                 139.79
+No. Observations:                 100   AIC:                            -275.6
+Df Residuals:                      98   BIC:                            -270.4
+Df Model:                           1                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         -0.0004      0.006     -0.059      0.953      -0.013       0.012
+MKT_excess     1.0419      0.146      7.117      0.000       0.755       1.329
+==============================================================================
+Omnibus:                       19.970   Durbin-Watson:                   2.142
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               39.593
+Skew:                           0.765   Prob(JB):                     2.53e-09
+Kurtosis:                       5.677   Cond. No.                         21.5
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 4 lags and without small sample correction
+
+
+================================================================================
+CCAPM (GMM Euler Equation, Multi-Asset)
+================================================================================
+
+Assets: XLE
+Instruments: lag1
+Number of instruments per asset: 3
+Number of parameters: 2 (δ, γ)
+Degrees of freedom: 1
+
+Estimated parameters [δ, γ]: [ 0.98625928 -0.17228587]
+Standard errors: [0.01248617 2.24375088]
+
+J-Statistic (Hansen test): 1.1018
+P-value: 0.29387044462423706
+
+✓ Model cannot be rejected at 5% significance level
+
+
+================================================================================
+APT (OLS with HAC Standard Errors)
+================================================================================
+
+Factors: dlnGDP, dlnC, d_rf
+
+APT [XLE] (dlnGDP, dlnC, d_rf; HAC=auto)  |  R² = 0.1718
+------------------------------------------------------------------------------
+Parameter                    Coefficient t-statistic
+const                          -0.001398       -0.13
+dlnGDP                          4.214304        3.77
+dlnC                           -5.575528       -4.82
+d_rf                            5.470495        0.24
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:             excess_XLE   R-squared:                       0.172
+Model:                            OLS   Adj. R-squared:                  0.146
+Method:                 Least Squares   F-statistic:                     8.250
+Date:                Fri, 31 Oct 2025   Prob (F-statistic):           6.12e-05
+Time:                        19:51:23   Log-Likelihood:                 123.96
+No. Observations:                 100   AIC:                            -239.9
+Df Residuals:                      96   BIC:                            -229.5
+Df Model:                           3                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         -0.0014      0.011     -0.127      0.899      -0.023       0.020
+dlnGDP         4.2143      1.118      3.770      0.000       2.024       6.405
+dlnC          -5.5755      1.156     -4.824      0.000      -7.841      -3.310
+d_rf           5.4705     23.038      0.237      0.812     -39.684      50.625
+==============================================================================
+Omnibus:                        4.270   Durbin-Watson:                   2.208
+Prob(Omnibus):                  0.118   Jarque-Bera (JB):                4.220
+Skew:                          -0.258   Prob(JB):                        0.121
+Kurtosis:                       3.864   Cond. No.                     2.88e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 4 lags and without small sample correction
+[2] The condition number is large, 2.88e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
